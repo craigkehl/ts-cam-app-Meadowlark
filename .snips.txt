@@ -1,0 +1,5 @@
+Find the machine's ip address:
+ifconfig | grep 'inet ' | grep -v 127.0.0.1
+
+List serial ports:
+ls /dev/tty.*
