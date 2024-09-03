@@ -1,5 +1,6 @@
 import PresetButtonsGroup from '../../components/panTiltCamera/Presets/PresetButtonsGroup';
 import AddPreset from '../../components/panTiltCamera/Presets/AddPreset';
+import UpdatePresetById from '../../components/panTiltCamera/Presets/UpdatePresetById';
 
 const ConfigPresets: React.FC<{ className?: string }> = (props) => {
 
@@ -16,6 +17,7 @@ const ConfigPresets: React.FC<{ className?: string }> = (props) => {
         list='hidden'
       />
       <AddPreset />
+      <UpdatePresetById />
     </>
   );
 };

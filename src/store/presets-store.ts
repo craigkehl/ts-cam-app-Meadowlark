@@ -2,6 +2,7 @@ import { initStore, GlobalState } from './store';
 
 import { findSmallestMissing } from '../util/helpers';
 import { setPreset } from '../services/cam-http-requests';
+import { set } from 'lodash';
 
 export interface PresetState {
   isCurrent: boolean;
@@ -49,6 +50,10 @@ const configureStore = () => {
         id: newId,
       };
       curState.presets.push(newPreset);
+    },
+    UPDATE_PRESET: (curState: GlobalState, presetId: number) => {
+      setPreset(presetId.toString());
+      return curState
     },
   };
 
