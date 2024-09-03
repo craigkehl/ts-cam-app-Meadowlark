@@ -1,5 +1,5 @@
 const CAM_BASEURL: string =
-  process.env.REACT_APP_CAM_BASEURL || 'http://localhost:4000/api/ptz';
+  process.env.REACT_APP_CAM_BASEURL || 'http://192.168.108.2:4000/api/ptz';
 
 export const recallPreset = async (presetId: string) => {
   try {
