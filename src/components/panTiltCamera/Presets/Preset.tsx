@@ -12,6 +12,7 @@ interface PresetProps extends React.PropsWithChildren<object> {
   isShow: boolean;
   isCurrent: boolean;
   isConfigure: boolean;
+  showId: boolean;
   onRecallPreset: (id: number) => void;
 }
 
@@ -27,6 +28,9 @@ const Preset = React.memo((props: PresetProps) => {
       }`}
       onClick={() => recallPresetHandler(props.id)}
     >
+      <div className={classes.showId} >
+        {props.id}
+      </div>
       <div className={classes.addIcon}>
       {
         props.isConfigure && (!props.isShow ?

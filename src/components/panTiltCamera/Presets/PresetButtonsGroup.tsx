@@ -63,6 +63,7 @@ const PresetButtonsGroup: React.FC<ButtonsGroupProps> = (props) => {
                   isShow={preset.isShow}
                   isCurrent={preset.isCurrent}
                   isConfigure={isConfigure}
+                  showId={true}
                   onRecallPreset={() => recallPresetHandler(preset.id)}>
                   {preset.name}
                 </Preset>

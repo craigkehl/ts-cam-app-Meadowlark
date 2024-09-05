@@ -15,3 +15,12 @@
   margin-top: -1rem;
   fill: currentColor;
 }
+
+.showId {
+  display: block;
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: auto;
+  margin-left: -0.5rem;
+  margin-top: -0.7rem;
+}
