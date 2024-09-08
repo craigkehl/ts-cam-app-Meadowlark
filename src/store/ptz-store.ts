@@ -29,9 +29,9 @@ const configureStore = () => {
 
   initStore(actions, {
     ptzSettings: {
-      resolution: 0.5,
-      tiltSpeed: 1,
-      panSpeed: 1,
+      resolution: 1,
+      tiltSpeed: .5,
+      panSpeed: .5,
     },
   });
 };

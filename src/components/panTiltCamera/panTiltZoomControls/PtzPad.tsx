@@ -84,16 +84,19 @@ function TwoDimensionSlider(props: TwoDimensionSliderProps) {
     if (state.isPointerDown) {
       // Calculate x and y coordinates based on the pointer position
       const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
-      const mouseX = e.clientX - left;
-      const mouseY = e.clientY - top;
-      const centerX = width / 2;
-      const centerY = height / 2;
       const xRange = xMaxSteps * 2; // including negative values
       const yRange = yMaxSteps * 2;
       const xScale = xRange / width;
       const yScale = yRange / height;
-      const xValue = Math.floor((mouseX - centerX) * xScale);
-      const yValue = Math.floor((centerY - mouseY) * yScale);
+      const mouseX = e.clientX - left;
+      const mouseY = e.clientY - top;
+      const centerX = width / 2;
+      const centerY = height / 2;
+      const xPosition = (mouseX - centerX) * xScale;
+      const yPosition = (centerY - mouseY) * yScale
+      const xValue = xPosition > 0 ? Math.floor(xPosition) : Math.ceil(xPosition);
+      const yValue = yPosition > 0 ? Math.floor(yPosition) : Math.ceil(yPosition);
+      console.log(` x-range: ${xRange}, y-range: ${yRange}, x-Scale: ${xScale}, y-scale: ${yScale} \n x-val: ${xValue}, y-val: ${yValue}`);
 
       // Check that the value is within the Max boundary
       const xValueBounded = (xValue > xMaxSteps) ? xMaxSteps :
